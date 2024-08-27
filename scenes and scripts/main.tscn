@@ -640,7 +640,6 @@ script = ExtResource( 3 )
 modulate = Color( 1, 1, 1, 0.784314 )
 frames = SubResource( 2 )
 animation = "plastic_junction"
-frame = 1
 playing = true
 
 [node name="needs_tile_text" type="Node2D" parent="gameplay"]
