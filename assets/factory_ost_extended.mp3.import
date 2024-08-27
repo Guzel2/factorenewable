@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/factory_ost_extended.mp3-e8b92e43b9b19bd06bd5695ee12682a1.mp3str"
+
+[deps]
+
+source_file="res://assets/factory_ost_extended.mp3"
+dest_files=[ "res://.import/factory_ost_extended.mp3-e8b92e43b9b19bd06bd5695ee12682a1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

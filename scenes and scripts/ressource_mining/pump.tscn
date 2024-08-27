@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://sprites/ressource_mine/pump.png" type="Texture" id=1]
+[ext_resource path="res://scenes and scripts/ressource_mining/pump.gd" type="Script" id=2]
+[ext_resource path="res://scenes and scripts/ui/warning_message.tscn" type="PackedScene" id=3]
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=27]
+animations = [ {
+"frames": [ SubResource( 26 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 8, 8 )
+
+[node name="pump" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 27 )
+centered = false
+
+[node name="area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
+position = Vector2( 8, 8 )
+shape = SubResource( 28 )
+
+[node name="warning_message" parent="." instance=ExtResource( 3 )]
+position = Vector2( 8, -16 )

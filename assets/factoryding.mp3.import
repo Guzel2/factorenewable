@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/factoryding.mp3-17514c2d68ebbc7d73d262037f9af12e.mp3str"
+
+[deps]
+
+source_file="res://assets/factoryding.mp3"
+dest_files=[ "res://.import/factoryding.mp3-17514c2d68ebbc7d73d262037f9af12e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

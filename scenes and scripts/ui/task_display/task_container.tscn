@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes and scripts/ui/text_display.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/ui/tasks/task_container.png" type="Texture" id=2]
+[ext_resource path="res://scenes and scripts/ui/task_display/task_container.gd" type="Script" id=3]
+[ext_resource path="res://sprites/ui/tasks/progress_bar.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 45, 13 )
+
+[node name="task_container" type="Sprite"]
+texture = ExtResource( 2 )
+centered = false
+script = ExtResource( 3 )
+
+[node name="text_display" parent="." instance=ExtResource( 1 )]
+modulate = Color( 0.721569, 0.721569, 0.721569, 1 )
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 72.0
+margin_bottom = 16.0
+text = "sussy Baka dwd wdwdwd"
+
+[node name="progress_bar" type="Sprite" parent="."]
+position = Vector2( 2, 13 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="progress_display" parent="." instance=ExtResource( 1 )]
+modulate = Color( 0.298039, 0.298039, 0.298039, 1 )
+margin_left = 2.0
+margin_top = 13.0
+margin_bottom = 27.0
+text = "Anyotheg TexW"
+
+[node name="area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
+position = Vector2( 45, 13 )
+shape = SubResource( 1 )
+
+[connection signal="mouse_entered" from="area" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="area" to="." method="_on_area_mouse_exited"]

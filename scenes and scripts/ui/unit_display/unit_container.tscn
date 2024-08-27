@@ -1,0 +1,187 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://sprites/conveyor/conv_junction.png" type="Texture" id=1]
+[ext_resource path="res://sprites/conveyor/conveyor.png" type="Texture" id=2]
+[ext_resource path="res://sprites/conveyor/conv_router.png" type="Texture" id=3]
+[ext_resource path="res://scenes and scripts/ui/unit_display/unit_container.gd" type="Script" id=4]
+[ext_resource path="res://sprites/ui/units/unit_container.png" type="Texture" id=5]
+[ext_resource path="res://sprites/ui/units/unit_container_outline.png" type="Texture" id=6]
+[ext_resource path="res://sprites/ui/units/unit_display_symbols.png" type="Texture" id=7]
+[ext_resource path="res://sprites/ressource_mine/forester.png" type="Texture" id=8]
+[ext_resource path="res://sprites/conveyor/plastic_conveyor.png" type="Texture" id=9]
+[ext_resource path="res://sprites/conveyor/plastic_junction.png" type="Texture" id=10]
+[ext_resource path="res://sprites/conveyor/plastic_router.png" type="Texture" id=11]
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 7 )
+region = Rect2( 144, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 7 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 7 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 7 )
+region = Rect2( 128, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 7 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=96]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=97]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=98]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 7 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 7 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=62]
+animations = [ {
+"frames": [ SubResource( 59 ) ],
+"loop": true,
+"name": "big_mine",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 77 ) ],
+"loop": true,
+"name": "bio_air_booster",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 70 ) ],
+"loop": true,
+"name": "bio_generator",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 64 ) ],
+"loop": true,
+"name": "biomass_press",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 76 ) ],
+"loop": true,
+"name": "co2_collector",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 57 ) ],
+"loop": true,
+"name": "conv_junction",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 61 ) ],
+"loop": true,
+"name": "conv_router",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 56 ) ],
+"loop": true,
+"name": "conveyor",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 75 ) ],
+"loop": true,
+"name": "electric_pump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "forester",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 96 ) ],
+"loop": true,
+"name": "plastic_conveyor",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 65 ) ],
+"loop": true,
+"name": "plastic_farm",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 97 ) ],
+"loop": true,
+"name": "plastic_junction",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 98 ) ],
+"loop": true,
+"name": "plastic_router",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 58 ) ],
+"loop": true,
+"name": "pump",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 71 ) ],
+"loop": true,
+"name": "solar_panel",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 8, 8 )
+
+[node name="unit_container" type="AnimatedSprite"]
+z_index = 1
+frames = SubResource( 62 )
+animation = "electric_pump"
+centered = false
+script = ExtResource( 4 )
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 8, 9 )
+z_index = -1
+texture = ExtResource( 5 )
+
+[node name="area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
+position = Vector2( 8, 8 )
+shape = SubResource( 31 )
+
+[node name="outline" type="Sprite" parent="."]
+visible = false
+position = Vector2( 8, 9 )
+texture = ExtResource( 6 )
+
+[connection signal="mouse_entered" from="area" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="area" to="." method="_on_area_mouse_exited"]

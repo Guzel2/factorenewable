@@ -1,0 +1,1245 @@
+[gd_scene load_steps=137 format=2]
+
+[ext_resource path="res://sprites/conveyor/conveyor.png" type="Texture" id=1]
+[ext_resource path="res://sprites/ressource_mine/forester.png" type="Texture" id=2]
+[ext_resource path="res://scenes and scripts/gameplay.gd" type="Script" id=3]
+[ext_resource path="res://sprites/conveyor/conv_junction.png" type="Texture" id=4]
+[ext_resource path="res://sprites/conveyor/conv_router.png" type="Texture" id=5]
+[ext_resource path="res://sprites/ressource_mine/big_mine.png" type="Texture" id=6]
+[ext_resource path="res://sprites/factory/biomass_press.png" type="Texture" id=7]
+[ext_resource path="res://scenes and scripts/level_design/level2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes and scripts/main_menu.gd" type="Script" id=9]
+[ext_resource path="res://scenes and scripts/main.gd" type="Script" id=10]
+[ext_resource path="res://sprites/menu/main/bg.png" type="Texture" id=11]
+[ext_resource path="res://sprites/menu/main/title.png" type="Texture" id=12]
+[ext_resource path="res://sprites/ressource_mine/pump.png" type="Texture" id=13]
+[ext_resource path="res://scenes and scripts/ui/ressource_display/ressource_display.gd" type="Script" id=14]
+[ext_resource path="res://sprites/ui/ressources/ressource_display.png" type="Texture" id=15]
+[ext_resource path="res://scenes and scripts/player.gd" type="Script" id=16]
+[ext_resource path="res://scenes and scripts/ui/ui.gd" type="Script" id=17]
+[ext_resource path="res://sprites/ui/units/unit_display.png" type="Texture" id=18]
+[ext_resource path="res://scenes and scripts/ui/unit_display/unit_display.gd" type="Script" id=19]
+[ext_resource path="res://scenes and scripts/ui/task_display/task_display.gd" type="Script" id=20]
+[ext_resource path="res://sprites/ui/units/selected_unit_container.png" type="Texture" id=21]
+[ext_resource path="res://sprites/ui/numbers.png" type="Texture" id=22]
+[ext_resource path="res://scenes and scripts/ui/text_display.tscn" type="PackedScene" id=23]
+[ext_resource path="res://sprites/ui/units/selected_ressource_container.png" type="Texture" id=24]
+[ext_resource path="res://sprites/materials/scrap.png" type="Texture" id=25]
+[ext_resource path="res://sprites/materials/water.png" type="Texture" id=26]
+[ext_resource path="res://sprites/materials/wood.png" type="Texture" id=27]
+[ext_resource path="res://scenes and scripts/ui/unit_display/selected_unit_display.gd" type="Script" id=28]
+[ext_resource path="res://sprites/ui/units/unit_display_symbols.png" type="Texture" id=29]
+[ext_resource path="res://scenes and scripts/ui/unit_display/selected_unit_ressource_cost_display.gd" type="Script" id=30]
+[ext_resource path="res://sprites/ui/white_fullscreen.png" type="Texture" id=31]
+[ext_resource path="res://scenes and scripts/ui/unit_display/unit_description.gd" type="Script" id=32]
+[ext_resource path="res://scenes and scripts/tutorial.gd" type="Script" id=33]
+[ext_resource path="res://sprites/tutorial/black_screen_with_empty_center.png" type="Texture" id=34]
+[ext_resource path="res://sprites/materials/biomass.png" type="Texture" id=35]
+[ext_resource path="res://scenes and scripts/menu/menu_button.tscn" type="PackedScene" id=36]
+[ext_resource path="res://sprites/materials/plastic.png" type="Texture" id=37]
+[ext_resource path="res://sprites/cursor/plastic_farm.png" type="Texture" id=38]
+[ext_resource path="res://scenes and scripts/menu/level_select.gd" type="Script" id=39]
+[ext_resource path="res://assets/PixelGuzel.ttf" type="DynamicFontData" id=40]
+[ext_resource path="res://sprites/factory/bio_generator.png" type="Texture" id=41]
+[ext_resource path="res://sprites/factory/solar_panel.png" type="Texture" id=42]
+[ext_resource path="res://scenes and scripts/ui/needs_tile_text.gd" type="Script" id=43]
+[ext_resource path="res://sprites/ressource_mine/electric_pump.png" type="Texture" id=44]
+[ext_resource path="res://sprites/ressource_mine/co2_collector.png" type="Texture" id=45]
+[ext_resource path="res://sprites/factory/bio_air_booster.png" type="Texture" id=46]
+[ext_resource path="res://sprites/conveyor/plastic_conveyor.png" type="Texture" id=47]
+[ext_resource path="res://sprites/conveyor/plastic_junction.png" type="Texture" id=48]
+[ext_resource path="res://sprites/conveyor/plastic_router.png" type="Texture" id=49]
+[ext_resource path="res://scenes and scripts/menu/credits.gd" type="Script" id=50]
+[ext_resource path="res://assets/factory_ost_extended.mp3" type="AudioStream" id=51]
+[ext_resource path="res://sprites/cursor/forester.png" type="Texture" id=52]
+[ext_resource path="res://scenes and scripts/task_description.gd" type="Script" id=53]
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 5 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 5 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 5 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 5 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 1 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 1 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 47 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 47 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 47 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 47 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 47 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=83]
+atlas = ExtResource( 47 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=84]
+atlas = ExtResource( 47 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=85]
+atlas = ExtResource( 47 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=101]
+atlas = ExtResource( 38 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=102]
+atlas = ExtResource( 38 )
+region = Rect2( 128, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=103]
+atlas = ExtResource( 38 )
+region = Rect2( 256, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=104]
+atlas = ExtResource( 38 )
+region = Rect2( 384, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=86]
+atlas = ExtResource( 48 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=87]
+atlas = ExtResource( 48 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=88]
+atlas = ExtResource( 49 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=89]
+atlas = ExtResource( 49 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=90]
+atlas = ExtResource( 49 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=91]
+atlas = ExtResource( 49 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=92]
+atlas = ExtResource( 49 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=93]
+atlas = ExtResource( 49 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=94]
+atlas = ExtResource( 49 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=95]
+atlas = ExtResource( 49 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 24 ) ],
+"loop": true,
+"name": "big_mine",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 46 ) ],
+"loop": true,
+"name": "bio_air_booster",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 41 ) ],
+"loop": true,
+"name": "bio_generator",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "biomass_press",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 45 ) ],
+"loop": true,
+"name": "co2_collector",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "conv_junction",
+"speed": 16.0
+}, {
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"loop": true,
+"name": "conv_router",
+"speed": 16.0
+}, {
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"loop": true,
+"name": "conveyor",
+"speed": 16.0
+}, {
+"frames": [ ExtResource( 44 ) ],
+"loop": true,
+"name": "electric_pump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 52 ) ],
+"loop": true,
+"name": "forester",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ) ],
+"loop": true,
+"name": "plastic_conveyor",
+"speed": 20.0
+}, {
+"frames": [ SubResource( 101 ), SubResource( 102 ), SubResource( 103 ), SubResource( 104 ) ],
+"loop": true,
+"name": "plastic_farm",
+"speed": 0.0
+}, {
+"frames": [ SubResource( 86 ), SubResource( 87 ) ],
+"loop": true,
+"name": "plastic_junction",
+"speed": 20.0
+}, {
+"frames": [ SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ), SubResource( 95 ) ],
+"loop": true,
+"name": "plastic_router",
+"speed": 20.0
+}, {
+"frames": [ SubResource( 26 ) ],
+"loop": true,
+"name": "pump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 42 ) ],
+"loop": true,
+"name": "solar_panel",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=74]
+size = 9
+font_data = ExtResource( 40 )
+
+[sub_resource type="RectangleShape2D" id=72]
+extents = Vector2( 240, 112 )
+
+[sub_resource type="DynamicFont" id=105]
+size = 9
+font_data = ExtResource( 40 )
+
+[sub_resource type="RectangleShape2D" id=63]
+extents = Vector2( 45, 10.5 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 29 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 29 )
+region = Rect2( 144, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 29 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 29 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 29 )
+region = Rect2( 128, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 29 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=96]
+atlas = ExtResource( 47 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 29 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=97]
+atlas = ExtResource( 48 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=98]
+atlas = ExtResource( 49 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 29 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 29 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=62]
+animations = [ {
+"frames": [ SubResource( 59 ) ],
+"loop": true,
+"name": "big_mine",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 77 ) ],
+"loop": true,
+"name": "bio_air_booster",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 70 ) ],
+"loop": true,
+"name": "bio_generator",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 64 ) ],
+"loop": true,
+"name": "biomass_press",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 76 ) ],
+"loop": true,
+"name": "co2_collector",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 57 ) ],
+"loop": true,
+"name": "conv_junction",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 61 ) ],
+"loop": true,
+"name": "conv_router",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 56 ) ],
+"loop": true,
+"name": "conveyor",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 75 ) ],
+"loop": true,
+"name": "electric_pump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "forester",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 96 ) ],
+"loop": true,
+"name": "plastic_conveyor",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 65 ) ],
+"loop": true,
+"name": "plastic_farm",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 97 ) ],
+"loop": true,
+"name": "plastic_junction",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 98 ) ],
+"loop": true,
+"name": "plastic_router",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 58 ) ],
+"loop": true,
+"name": "pump",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 71 ) ],
+"loop": true,
+"name": "solar_panel",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=73]
+size = 9
+extra_spacing_bottom = -1
+font_data = ExtResource( 40 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 25 )
+region = Rect2( 0, 0, 12, 12 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 26 )
+region = Rect2( 0, 0, 12, 12 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 27 )
+region = Rect2( 0, 0, 12, 12 )
+
+[sub_resource type="SpriteFrames" id=41]
+animations = [ {
+"frames": [ ExtResource( 35 ) ],
+"loop": true,
+"name": "biomass",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 37 ) ],
+"loop": true,
+"name": "plastic",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 40 ) ],
+"loop": true,
+"name": "scrap",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 39 ) ],
+"loop": true,
+"name": "water",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 38 ) ],
+"loop": true,
+"name": "wood",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 0, 8, 13 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 22 )
+region = Rect2( 8, 0, 8, 13 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 22 )
+region = Rect2( 16, 0, 8, 13 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 22 )
+region = Rect2( 24, 0, 8, 13 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 22 )
+region = Rect2( 32, 0, 8, 13 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 22 )
+region = Rect2( 40, 0, 8, 13 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 22 )
+region = Rect2( 48, 0, 8, 13 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 22 )
+region = Rect2( 56, 0, 8, 13 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 22 )
+region = Rect2( 64, 0, 8, 13 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 22 )
+region = Rect2( 72, 0, 8, 13 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 22 )
+region = Rect2( 88, 0, 8, 13 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 22 )
+region = Rect2( 80, 0, 8, 13 )
+
+[sub_resource type="SpriteFrames" id=54]
+animations = [ {
+"frames": [ SubResource( 43 ) ],
+"loop": true,
+"name": "0",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 44 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 45 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 46 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 47 ) ],
+"loop": true,
+"name": "4",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 48 ) ],
+"loop": true,
+"name": "5",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 49 ) ],
+"loop": true,
+"name": "6",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 50 ) ],
+"loop": true,
+"name": "7",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 51 ) ],
+"loop": true,
+"name": "8",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 52 ) ],
+"loop": true,
+"name": "9",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 55 ) ],
+"loop": true,
+"name": "_",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 53 ) ],
+"loop": true,
+"name": "k",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=99]
+size = 18
+font_data = ExtResource( 40 )
+
+[sub_resource type="DynamicFont" id=100]
+size = 9
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 40 )
+
+[node name="main" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="gameplay" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="nature" parent="gameplay" instance=ExtResource( 8 )]
+
+[node name="cursor" type="AnimatedSprite" parent="gameplay"]
+modulate = Color( 1, 1, 1, 0.784314 )
+frames = SubResource( 2 )
+animation = "plastic_junction"
+frame = 1
+playing = true
+
+[node name="needs_tile_text" type="Node2D" parent="gameplay"]
+modulate = Color( 1, 1, 1, 0 )
+script = ExtResource( 43 )
+
+[node name="label" type="Label" parent="gameplay/needs_tile_text"]
+margin_left = -69.0
+margin_top = -30.0
+margin_right = 69.0
+margin_bottom = -9.0
+custom_colors/font_color = Color( 0.95, 0.095, 0.095, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 74 )
+text = "Place this unit on a city tile and a tree tile and a city tile."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="player" type="Node2D" parent="gameplay"]
+script = ExtResource( 16 )
+
+[node name="area" type="Area2D" parent="gameplay/player"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gameplay/player/area"]
+position = Vector2( 0, 23 )
+shape = SubResource( 72 )
+
+[node name="camera" type="Camera2D" parent="gameplay/player"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="ui" type="Node2D" parent="gameplay/player"]
+z_index = 4
+script = ExtResource( 17 )
+
+[node name="task_display" type="Node2D" parent="gameplay/player/ui"]
+position = Vector2( -240, -135 )
+script = ExtResource( 20 )
+
+[node name="text_display" type="Label" parent="gameplay/player/ui/task_display"]
+modulate = Color( 0.721569, 0.721569, 0.721569, 1 )
+margin_left = 95.0
+margin_top = 51.0
+margin_right = 385.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 105 )
+text = "All tasks completed! You just saved this area!
+Press \"Esc\" to return to the main menu"
+
+[node name="task_description" type="Sprite" parent="gameplay/player/ui"]
+visible = false
+self_modulate = Color( 0, 0, 0, 0.607843 )
+z_index = 10
+texture = ExtResource( 31 )
+script = ExtResource( 53 )
+
+[node name="text_display" parent="gameplay/player/ui/task_description" instance=ExtResource( 23 )]
+margin_left = -144.0
+margin_top = -136.0
+margin_right = 144.0
+margin_bottom = 136.0
+text = "sus whate"
+align = 1
+valign = 1
+
+[node name="ressource_display" type="Sprite" parent="gameplay/player/ui"]
+position = Vector2( 0, -112 )
+texture = ExtResource( 15 )
+script = ExtResource( 14 )
+
+[node name="unit_display" type="Sprite" parent="gameplay/player/ui"]
+position = Vector2( 150, -135 )
+texture = ExtResource( 18 )
+centered = false
+script = ExtResource( 19 )
+
+[node name="selected_unit_display" type="Sprite" parent="gameplay/player/ui"]
+position = Vector2( 150, -64 )
+texture = ExtResource( 21 )
+centered = false
+script = ExtResource( 28 )
+
+[node name="select_area" type="Area2D" parent="gameplay/player/ui/selected_unit_display"]
+z_index = 1
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="select_col" type="CollisionShape2D" parent="gameplay/player/ui/selected_unit_display/select_area"]
+position = Vector2( 45, 10.5 )
+shape = SubResource( 63 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="unit_display" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display"]
+position = Vector2( 2, 2 )
+frames = SubResource( 62 )
+animation = "plastic_junction"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="text_display" type="Label" parent="gameplay/player/ui/selected_unit_display"]
+modulate = Color( 0.721569, 0.721569, 0.721569, 1 )
+margin_left = 21.0
+margin_top = 1.0
+margin_right = 89.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 73 )
+text = "Conveyor: dwhhwh"
+autowrap = true
+clip_text = true
+
+[node name="ressource0" type="Sprite" parent="gameplay/player/ui/selected_unit_display"]
+position = Vector2( 0, 21 )
+texture = ExtResource( 24 )
+centered = false
+script = ExtResource( 30 )
+
+[node name="ressource_sprite" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource0"]
+position = Vector2( 4, 1 )
+z_index = 1
+frames = SubResource( 41 )
+animation = "plastic"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number0" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource0"]
+position = Vector2( 18, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number1" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource0"]
+position = Vector2( 26, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number2" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource0"]
+position = Vector2( 34, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number3" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource0"]
+position = Vector2( 42, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number4" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource0"]
+position = Vector2( 50, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number5" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource0"]
+position = Vector2( 58, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number6" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource0"]
+position = Vector2( 66, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ressource1" type="Sprite" parent="gameplay/player/ui/selected_unit_display"]
+position = Vector2( 0, 36 )
+texture = ExtResource( 24 )
+centered = false
+script = ExtResource( 30 )
+
+[node name="ressource_sprite" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource1"]
+position = Vector2( 4, 1 )
+z_index = 1
+frames = SubResource( 41 )
+animation = "biomass"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number0" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource1"]
+position = Vector2( 18, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number1" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource1"]
+position = Vector2( 26, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number2" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource1"]
+position = Vector2( 34, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number3" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource1"]
+position = Vector2( 42, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number4" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource1"]
+position = Vector2( 50, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number5" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource1"]
+position = Vector2( 58, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number6" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource1"]
+position = Vector2( 66, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ressource2" type="Sprite" parent="gameplay/player/ui/selected_unit_display"]
+position = Vector2( 0, 51 )
+texture = ExtResource( 24 )
+centered = false
+script = ExtResource( 30 )
+
+[node name="ressource_sprite" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource2"]
+position = Vector2( 4, 1 )
+z_index = 1
+frames = SubResource( 41 )
+animation = "biomass"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number0" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource2"]
+position = Vector2( 18, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number1" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource2"]
+position = Vector2( 26, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number2" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource2"]
+position = Vector2( 34, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number3" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource2"]
+position = Vector2( 42, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number4" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource2"]
+position = Vector2( 50, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number5" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource2"]
+position = Vector2( 58, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number6" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource2"]
+position = Vector2( 66, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ressource3" type="Sprite" parent="gameplay/player/ui/selected_unit_display"]
+position = Vector2( 0, 66 )
+texture = ExtResource( 24 )
+centered = false
+script = ExtResource( 30 )
+
+[node name="ressource_sprite" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource3"]
+position = Vector2( 4, 1 )
+z_index = 1
+frames = SubResource( 41 )
+animation = "biomass"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number0" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource3"]
+position = Vector2( 18, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number1" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource3"]
+position = Vector2( 26, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number2" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource3"]
+position = Vector2( 34, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number3" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource3"]
+position = Vector2( 42, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number4" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource3"]
+position = Vector2( 50, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number5" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource3"]
+position = Vector2( 58, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="number6" type="AnimatedSprite" parent="gameplay/player/ui/selected_unit_display/ressource3"]
+position = Vector2( 66, 1 )
+frames = SubResource( 54 )
+animation = "_"
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="unit_description" type="Sprite" parent="gameplay/player/ui"]
+visible = false
+self_modulate = Color( 0, 0, 0, 0.607843 )
+z_index = 10
+texture = ExtResource( 31 )
+script = ExtResource( 32 )
+
+[node name="text_display" parent="gameplay/player/ui/unit_description" instance=ExtResource( 23 )]
+margin_left = -144.0
+margin_top = -136.0
+margin_right = 144.0
+margin_bottom = 136.0
+text = "sus"
+align = 1
+valign = 1
+
+[node name="area" type="Area2D" parent="gameplay/player/ui"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="col" type="CollisionPolygon2D" parent="gameplay/player/ui/area"]
+polygon = PoolVector2Array( 150, -61, 240, -61, 240, -135, -240, -135, -240, -69, -150, -69, -150, -89, 150, -89 )
+
+[node name="tutorial" type="Node2D" parent="gameplay/player"]
+visible = false
+z_index = 20
+script = ExtResource( 33 )
+
+[node name="bg" type="Sprite" parent="gameplay/player/tutorial"]
+self_modulate = Color( 1, 1, 1, 0.588235 )
+texture = ExtResource( 34 )
+centered = false
+
+[node name="text_display" parent="gameplay/player/tutorial" instance=ExtResource( 23 )]
+margin_right = 88.0
+margin_bottom = 32.0
+text = "sus"
+align = 1
+autowrap = true
+
+[node name="main_menu" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 9 )
+
+[node name="bg" type="Sprite" parent="main_menu"]
+modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
+scale = Vector2( 0.175, 0.175 )
+texture = ExtResource( 11 )
+
+[node name="title" type="Sprite" parent="main_menu"]
+position = Vector2( 0, -68 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 12 )
+
+[node name="continue" parent="main_menu" instance=ExtResource( 36 )]
+margin_left = -47.0
+margin_top = -50.0
+margin_right = 47.0
+margin_bottom = -20.0
+text = "Continue"
+
+[node name="tutorial" parent="main_menu" instance=ExtResource( 36 )]
+margin_left = -47.0
+margin_top = -15.0
+margin_right = 47.0
+margin_bottom = 15.0
+text = "Tutorial"
+
+[node name="levels" parent="main_menu" instance=ExtResource( 36 )]
+margin_left = -47.0
+margin_top = 20.0
+margin_right = 47.0
+margin_bottom = 50.0
+text = "Levels"
+
+[node name="credits" parent="main_menu" instance=ExtResource( 36 )]
+margin_left = -47.0
+margin_top = 55.0
+margin_right = 47.0
+margin_bottom = 85.0
+text = "Credits"
+
+[node name="camera" type="Camera2D" parent="main_menu"]
+zoom = Vector2( 0.35, 0.35 )
+
+[node name="level_select" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 39 )
+
+[node name="bg" type="Sprite" parent="level_select"]
+modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
+scale = Vector2( 0.175, 0.175 )
+texture = ExtResource( 11 )
+
+[node name="camera" type="Camera2D" parent="level_select"]
+zoom = Vector2( 0.35, 0.35 )
+
+[node name="back" parent="level_select" instance=ExtResource( 36 )]
+margin_left = -47.0
+margin_top = 31.0
+margin_right = 47.0
+margin_bottom = 61.0
+text = "Back"
+
+[node name="credits_menu" type="Node2D" parent="."]
+visible = false
+z_index = 1
+script = ExtResource( 50 )
+
+[node name="bg" type="Sprite" parent="credits_menu"]
+modulate = Color( 0.588235, 0.588235, 0.588235, 1 )
+scale = Vector2( 0.175, 0.175 )
+texture = ExtResource( 11 )
+
+[node name="camera" type="Camera2D" parent="credits_menu"]
+zoom = Vector2( 0.35, 0.35 )
+
+[node name="back" parent="credits_menu" instance=ExtResource( 36 )]
+margin_left = -47.0
+margin_top = 47.0
+margin_right = 47.0
+margin_bottom = 77.0
+text = "Back"
+
+[node name="title" type="Label" parent="credits_menu"]
+modulate = Color( 0.721569, 0.721569, 0.721569, 1 )
+margin_left = -31.0
+margin_top = -75.0
+margin_right = 31.0
+margin_bottom = -56.0
+custom_fonts/font = SubResource( 99 )
+text = "Credits"
+
+[node name="content" type="Label" parent="credits_menu"]
+modulate = Color( 0.721569, 0.721569, 0.721569, 1 )
+margin_left = -98.0
+margin_top = -48.0
+margin_right = 97.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 100 )
+text = "Pixel Artist: Laurin Loewe
+Game Design: Laurin Loewe
+Coding: Laurin Loewe
+
+Background Music: Milo
+Game Testers: Packet, Kaloras, Marko Sokic,
+Olivia Pflumm, Celina Roth
+"
+align = 1
+
+[node name="background_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 51 )
+volume_db = -20.0
+autoplay = true
+
+[connection signal="area_entered" from="gameplay/player/area" to="gameplay/player" method="_on_area_area_entered"]
+[connection signal="area_exited" from="gameplay/player/area" to="gameplay/player" method="_on_area_area_exited"]
+[connection signal="mouse_entered" from="gameplay/player/ui/selected_unit_display/select_area" to="gameplay/player/ui/selected_unit_display" method="_on_select_area_mouse_entered"]
+[connection signal="mouse_exited" from="gameplay/player/ui/selected_unit_display/select_area" to="gameplay/player/ui/selected_unit_display" method="_on_select_area_mouse_exited"]
+[connection signal="mouse_entered" from="gameplay/player/ui/area" to="gameplay/player/ui" method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="gameplay/player/ui/area" to="gameplay/player/ui" method="_on_area_mouse_exited"]
+[connection signal="pressed" from="main_menu/continue" to="main_menu" method="_on_continue_pressed"]
+[connection signal="pressed" from="main_menu/tutorial" to="main_menu" method="_on_tutorial_pressed"]
+[connection signal="pressed" from="main_menu/levels" to="main_menu" method="_on_levels_pressed"]
+[connection signal="pressed" from="main_menu/credits" to="main_menu" method="_on_credits_pressed"]
+[connection signal="pressed" from="level_select/back" to="level_select" method="_on_back_pressed"]
+[connection signal="pressed" from="credits_menu/back" to="credits_menu" method="_on_back_pressed"]
